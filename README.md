@@ -21,7 +21,26 @@ Creating docker_php_1
 Creating docker_web_1
 ```
 
-List of containers
+List the contents
+```sh
+├── README.md
+├── config
+│   ├── nginx
+│   │   └── default.conf
+│   └── php-fpm
+│       └── php-fpm.conf
+├── docker-compose.yml
+├── logs
+│   └── nginx
+│       ├── access.log
+│       └── error.log
+└── www
+    └── index.php
+```
+Web Server
+- http://localhost:8080/index.php](http://localhost:8080/index.php)
+
+List the containers
 ```sh
 $ docker-compose ps
 
