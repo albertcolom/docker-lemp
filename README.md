@@ -38,7 +38,7 @@ List the contents
     └── index.php
 ```
 Web Server
-- http://localhost:8080/index.php](http://localhost:8080/index.php)
+- [http://localhost:8080/index.php](http://localhost:8080/index.php)
 
 List the containers
 ```sh
