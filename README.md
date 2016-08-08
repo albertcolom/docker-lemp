@@ -5,6 +5,7 @@ Docker LEMP
 
 ### Requirements
 - [Docker](https://www.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/install/)
 
 ### Installation
 Clone this repository
@@ -79,4 +80,9 @@ $ docker stop $(docker ps -a -q)
 Remove all Docker containers
 ```sh
 $ docker rm $(docker ps -a -q)
+```
+
+Remove all Docker images
+```sh
+$ docker rmi $(docker images -q)
 ```
