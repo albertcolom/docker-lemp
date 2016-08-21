@@ -18,6 +18,7 @@ php:
         - ./config/php-fpm/php-fpm.conf:/usr/local/etc/php-fpm.conf
     links:
         - mysql
+        - redis
 mysql:
     image: mysql:latest
     ports:
@@ -26,3 +27,7 @@ mysql:
         - ./.data/db:/var/lib/mysql
     environment:
         - MYSQL_ROOT_PASSWORD=root
+redis:
+    image: redis:latest
+    ports:
+        - "6379:6379"
