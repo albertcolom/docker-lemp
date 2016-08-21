@@ -1,4 +1,4 @@
-Docker LEMP
+Docker LEMP + Redis
 ===========================
 [![Build Status](https://travis-ci.org/albertcolom/docker-lemp.svg?branch=master)](https://travis-ci.org/albertcolom/docker-lemp)
 ### Docker multicontainer: Nginx, php7-fpm, MySQL, Redis
@@ -76,6 +76,13 @@ Removing docker_mysql_1 ... done
 ```
 
 ### Tips
+Connect to Docker container
+```sh
+$ docker exec -i -t 665b4a1e17b6 /bin/bash #by ID
+or
+$ docker exec -i -t docker_redis_1 /bin/bash #by Name
+```
+
 Stop all Docker containers
 ```sh
 $ docker stop $(docker ps -a -q)
