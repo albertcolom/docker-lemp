@@ -97,3 +97,14 @@ Remove all Docker images
 ```sh
 $ docker rmi $(docker images -q)
 ```
+
+### MultiSites
+/etc/hosts:
+```sh
+127.0.0.1       localhost
+255.255.255.255 broadcasthost
+::1             localhost
+0.0.0.0 www.dev.example.com # /config/nginx/default.conf
+0.0.0.0 www.dev2.example.com # /config/nginx/web2.conf
+0.0.0.0 www.dev3.example.com # /config/nginx/web3.conf
+```
