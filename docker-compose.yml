@@ -1,8 +1,8 @@
 web:
     build: ./nginx/.
     ports:
-        - "80:80"
-        - "443:443"
+        - "8080:80"
+        - "4433:443"
     volumes:
         - ./www:/var/www/html
         - ./www/web2:/var/www/html/web2
@@ -36,14 +36,6 @@ mysql:
         MYSQL_DATABASE: db
         MYSQL_USER: user
         MYSQL_PASSWORD: pass 
-phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    ports:
-        - 8080:80
-    links:
-        - mysql
-    environment:
-        PMA_HOST: mysql 
 redis:
     image: redis:latest
     ports:
