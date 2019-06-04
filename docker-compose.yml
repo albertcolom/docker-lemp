@@ -1,5 +1,5 @@
 web:
-    image: nginx:latest
+    build: ./nginx/.
     ports:
         - "80:80"
         - "443:443"
@@ -14,7 +14,7 @@ web:
     links:
         - php
 php:
-    image: php:7-fpm
+    build: ./php/.
     ports:
         - "9080:9000"
     volumes:
@@ -28,11 +28,22 @@ php:
 mysql:
     image: mysql:latest
     ports:
-        - "3306:3306"
+        - "3316:3306"
     volumes:
         - ./.data/db:/var/lib/mysql
     environment:
-        - MYSQL_ROOT_PASSWORD=root
+        MYSQL_ROOT_PASSWORD: rootpass
+        MYSQL_DATABASE: db
+        MYSQL_USER: user
+        MYSQL_PASSWORD: pass 
+phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+        - 8080:80
+    links:
+        - mysql
+    environment:
+        PMA_HOST: mysql 
 redis:
     image: redis:latest
     ports:
